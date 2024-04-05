@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encryption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="#555555" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 20px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Text Encryption</h1>
+        <form action="/encrypt" method="post">
+            <label for="encrypt-text">Enter Text:</label>
+            <textarea id="encrypt-text" name="text" rows="4" cols="50"></textarea>
+            <label for="encrypt-key">Enter Key:</label>
+            <input type="text" id="encrypt-key" name="key">
+            <label for="encrypt-cipher">Select Cipher Type:</label>
+            <select id="encrypt-cipher" name="cipher_type">
+                <option value="caesar">Caesar Cipher</option>
+            </select>
+            <input type="submit" value="Encrypt">
+        </form>
+        <form action="/decrypt" method="post">
+            <label for="decrypt-text">Enter Text:</label>
+            <textarea id="decrypt-text" name="text" rows="4" cols="50"></textarea>
+            <label for="decrypt-key">Enter Key:</label>
+            <input type="text" id="decrypt-key" name="key">
+            <label for="decrypt-cipher">Select Cipher Type:</label>
+            <select id="decrypt-cipher" name="cipher_type">
+                <option value="caesar">Caesar Cipher</option>
+            </select>
+            <input type="submit" value="Decrypt">
+        </form>
+    </div>
+</body>
+</html>
